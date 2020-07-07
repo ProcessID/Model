@@ -1,8 +1,8 @@
 {
-    "name": "ProcessID/Model",
+    "name": "processid/model",
     "description": "Object management",
     "require": {
         "php": "^5.4",
-        "ProcessID/Traits": "1.*"
+        "processid/traits": "1.*"
     }
 }

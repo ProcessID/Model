@@ -15,7 +15,7 @@
    
    
 */   
-   namespace ProcessID\Model;
+   namespace processid\model;
 
    abstract class Model  {
       

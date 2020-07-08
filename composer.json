@@ -2,7 +2,7 @@
     "name": "processid/model",
     "description": "Object management",
     "require": {
-        "php": "^5.4",
+        "php": ">=5.4",
         "processid/traits": "1.*"
     }
 }

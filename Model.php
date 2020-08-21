@@ -7,10 +7,10 @@
     // Voici un exemple de classe enfant:
 
     class Clients extends \ProcessID\Model\Model {
-    protected $IDclients;
-    protected $nom;
-    protected $tel;
-    protected $siret;
+        protected $IDclients;
+        protected $nom;
+        protected $tel;
+        protected $siret;
     }
 
 
@@ -43,12 +43,13 @@
                 // Setter
                 $this->{$this->ta_setters[$name]} = $arg[0];
             }
-
-            if (array_key_exists($name,$this->ta_getters)) {
+            elseif (array_key_exists($name,$this->ta_getters)) {
                 // Getter
                 return $this->{$name};
             }
-
+            else {
+                trigger_error($name . '() introuvable',E_USER_ERROR);
+            }
         }
     }
 ?>

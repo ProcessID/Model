@@ -23,7 +23,7 @@
         private $ta_setters;
         private $ta_getters;
 
-        function __construct($data) {
+        function __construct($data = array()) {
             $this->createSettersGetters();
             $this->hydrate($data);
         }

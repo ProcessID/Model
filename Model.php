@@ -48,7 +48,7 @@
                 return $this->{$name};
             }
             else {
-                trigger_error($name . '() introuvable',E_USER_ERROR);
+                trigger_error($name . '() introuvable dans la classe ' . get_class($this),E_USER_ERROR);
             }
         }
     }

@@ -13,7 +13,8 @@
         protected $siret;
     }
 
-
+    // Lors de l'ajout d'une colonne à une table, il faut créer la variable dans le modèle avant de créer la colonne en BD pour ne pas avoir d'erreur. Attention cependant à ce que modèle et BD soient à jour avant de faire appel à cette nouvelle colonne dans le code.
+    // Lors de la suppression d'une colonne d'une table, il faut la supprimer en BD avant de supprimer la variable dans le modèle. Il faut auparavant supprimer tout appel à cette colonne dans le code avant de modifier BD et modèle.
     */   
     namespace processid\model;
 

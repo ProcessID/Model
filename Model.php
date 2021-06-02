@@ -12,6 +12,8 @@
         protected $tel;
         protected $siret;
     }
+    
+    La methode asArray() retourne les propriétés de l'objet dans un tableau associatif
 
     // Lors de l'ajout d'une colonne à une table, il faut créer la variable dans le modèle avant de créer la colonne en BD pour ne pas avoir d'erreur. Attention cependant à ce que modèle et BD soient à jour avant de faire appel à cette nouvelle colonne dans le code.
     // Lors de la suppression d'une colonne d'une table, il faut la supprimer en BD avant de supprimer la variable dans le modèle. Il faut auparavant supprimer tout appel à cette colonne dans le code avant de modifier BD et modèle.
@@ -51,6 +53,16 @@
             else {
                 trigger_error($name . '() introuvable dans la classe ' . get_class($this),E_USER_ERROR);
             }
+        }
+        
+        function asArray() {
+            $array_return = array();
+            foreach ($this as $attribut=>$valeur) {
+                if (!in_array($attribut,array('ta_setters','ta_getters'))) {
+                    $array_return[$attribut] = $valeur;
+                }
+            }
+            return $array_return;
         }
     }
 ?>
